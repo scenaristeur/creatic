@@ -1,0 +1,55 @@
+<html>
+<body>
+<h1>
+	Inscription
+</h1>
+
+
+<input id="nom" placeholder="Nom"/><br>
+<input id="prenom" placeholder="Prenom"/><br>
+<input id="age" placeholder="Age"/><br>
+<input id="ville" placeholder="Ville"/><br>
+
+<br>
+
+<button onclick="ajouter()">Enregistrer</button>
+
+
+
+
+<p style="background-color:red;color:white">
+
+	<ol id="liste">
+	</ol>
+</p>
+
+<script>
+
+function ajouter(){
+let personne = {}
+
+	personne.nom = document.getElementById("nom").value
+	personne.prenom = document.getElementById("prenom").value
+	personne.age = document.getElementById("age").value
+	personne.ville = document.getElementById("ville").value
+	console.log(personne)
+	
+	
+	document.getElementById("nom").value = ""
+	document.getElementById("prenom").value = ""
+	document.getElementById("age").value = ""
+	document.getElementById("ville").value = ""
+	
+	let liste = document.getElementById("liste")
+	
+	let nouvelle_ligne = document.createElement("li")
+	nouvelle_ligne.innerHTML = "<b>"+personne.prenom+"</b>"+" <u>"+personne.nom+"</u> habite "+personne.ville+" et a <i>"+personne.age+"</i> ans."
+	liste.append(nouvelle_ligne)
+	
+}
+
+
+</script>
+
+</body>
+</html>
